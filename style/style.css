@@ -179,7 +179,7 @@ body {
   position: absolute;
   bottom: 0; /* شروع از پایین */
   width: 100%;
-  font-size: 40px;
+  font-size: 35px;
   animation: slide-up 2s ease-in-out infinite;
 }
 @keyframes slide-up {
@@ -251,12 +251,14 @@ body {
     font-size: 14px;
     font-family: "IransanRegular";
 }
-
-.map-form{
+.map-midd{
     position: relative;
+}
+.map-form{
+    position: absolute;
     right: 0;
     left: 0;
-    bottom: 475px;
+    bottom: 415px;
     background-color: #ffff;
     display: flex;
     align-items: center;
@@ -311,6 +313,19 @@ body {
     font-family: "IransanBold";
     box-sizing: border-box;
     cursor: pointer;
+}
+
+@media screen and (max-width: 750px) {
+    .map{
+        width: 450px;
+        height: auto;
+    }
+    .map-form{
+        bottom: 250px;
+    }
+    .modal-pop{
+        width: 320px;
+    }
 }
 
 .search-btn {
@@ -443,7 +458,7 @@ body {
   font-family: "IransanBold";
   font-size: 16px;
 }
-@media screen and (max-width: 850px){
+@media screen and (max-width: 950px){
     .daste{
         padding-right: 20px;
     }

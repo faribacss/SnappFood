@@ -37,11 +37,6 @@ window.addEventListener("click", (e) => {
 
 
 
-
-
-
-
-
 const changeable = document.getElementById("change");
 const items = ["غذا", "نان", "خواروبار", "قهوه", "پیتزا"];
 let index = 0;
