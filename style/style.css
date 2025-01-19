@@ -1,0 +1,761 @@
+@font-face {
+  font-family: "IransanRegular";
+  src: url("../fonts/IRANSansWeb.ttf") format("trueType");
+}
+@font-face {
+  font-family: "IransanBold";
+  src: url("../fonts/IRANSansWeb_Bold.ttf") format("trueType");
+}
+@font-face {
+  font-family: "SnapWebRegular";
+  src: url("../fonts/SnappWeb2.0-Regular.ttf") format("trueType");
+}
+@font-face {
+  font-family: "SnapWebBold";
+  src: url("../fonts/SnappWeb2.0-Bold.ttf") format("trueType");
+}
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+.modal-pop{
+    background-color: #fff;
+    box-sizing: border-box;
+    position: absolute;
+    width: 420px;
+    height: 320px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    padding: 0 15px;
+    z-index: 10;
+    border: 1px solid rgba(68, 68, 68, 0.151);
+    border-radius: 10px;
+    display: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.pop-up{
+    animation: animatetop 0.5s forwards;
+}
+@keyframes animatetop {
+    0%{
+        margin-top: -230px;
+        opacity: 0;
+    }
+    100%{
+        margin-top: 220px;
+        opacity: 1;
+    }
+ }
+.modal-top i{
+    cursor: pointer;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar img{
+    width: 70px;
+    height: 70px;
+    z-index: 0;
+}
+.nav-content{
+    margin-top: 0;
+    padding: 0;
+}
+.nav-content p{
+    color: #3a3d42;
+    font-family: "IransanBold";
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.nav-content span{
+    color: #3a3d42;
+    font-family: "IransanRegular";
+    font-size: 24px;
+}
+.modal-bott form{
+    display: flex;
+    flex-direction: column;
+}
+.modal-bott form input{
+    border: 1px solid rgba(0, 0, 0, 0.226);
+    padding: 12px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.modal-bott form p{
+    color: #53565c;
+    font-size: 12px;
+    font-family: "IransanRegular";
+    padding: 8px 0;
+}
+.modal-bott form p:first-of-type{
+    font-family: "IransanBold";
+}
+.modal-bott button{
+    all: unset;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #ff00a6;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.main {
+  background-color: #f9fafb;
+  border-bottom-right-radius: 75px;
+  margin-top: 32px;
+  margin-bottom: 120px;
+  overflow: hidden;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-top: 32px;
+}
+
+.header .logo img {
+  width: 150px;
+}
+
+.header .actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 1;
+}
+
+.header .actions button {
+  background-color: #ff0099;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "IransanBold";
+}
+
+.header .actions .seller-link {
+  display: flex;
+  align-items: center;
+  color: #3a3d42;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: "IransanRegular";
+}
+.header .actions .seller-link i {
+  margin-left: 5px;
+  font-size: 25px;
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.desc {
+  padding: 20px;
+  margin: 10px 0;
+}
+.desc h1 {
+  color: #3a3d42;
+  font-size: 40px;
+  font-family: "SnapWebBold";
+  position: relative;
+  height: auto; /* ارتفاع ظرف */
+  overflow: hidden;
+}
+#change {
+  padding-right: 10px;
+  position: absolute;
+  bottom: 0; /* شروع از پایین */
+  width: 100%;
+  font-size: 40px;
+  animation: slide-up 2s ease-in-out infinite;
+}
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%); /* شروع از پایین */
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(0%); /* در وسط بودن */
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(0%); /* در وسط باقی ماندن */
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%); /* حرکت به بالا */
+    opacity: 0;
+  }
+}
+.map{
+    display: none;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid rgba(128, 128, 128, 0.281);
+    border-radius: 15px;
+    width: 750px;
+    height: 620px;
+    margin: 50px auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 50px;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    animation: pop-up 0.5s ease-in;
+}
+@keyframes pop-up {
+    0%{
+        margin-top: -230px;
+        opacity: 0;
+    }
+    100%{
+        margin-top: 50px;
+        opacity: 1;
+    }
+ }
+
+.map-top{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+.map-top p, .map-top h1{
+    padding: 10px 0 0 0;
+}
+.map-top i{
+    color: #53565c;
+    font-size: 20px;
+    cursor: pointer;
+}
+.map-top h1{
+    color: #3a3d42;
+    font-size: 24px;
+    font-family: "IransanBold";
+}
+.map-top p{
+    color: #53565c;
+    font-size: 14px;
+    font-family: "IransanRegular";
+}
+
+.map-form{
+    position: relative;
+    right: 0;
+    left: 0;
+    bottom: 475px;
+    background-color: #ffff;
+    display: flex;
+    align-items: center;
+    line-height: 1.5rem;
+    padding: 10px;
+    margin: 0 8px;
+    border-radius: 6px;
+    box-shadow: rgba(58, 61, 66, 0.06) 0px 1px 0px, rgba(0, 0, 0, 0.2) 0px 4px 16px -8px;
+}
+.map-form .tehran{
+    padding-left: 15px;
+    border-left: 1px solid #a6aaad65;
+}
+.map-form p{
+    color: #3a3d42;
+    font-size: 16px;
+    font-family: "IransanBold";
+}
+.map-form input{
+    padding: 10px;
+}
+.map-form input::placeholder{
+    font-size: 16px;
+    font-family: "Iransanregular";
+}
+.map-search-btn{
+    position: absolute;
+    left: 15px;
+    border-right: 1px solid #a6aaad65;
+}
+.map-form button{
+    all: unset;
+}
+.map-form button i{
+    color: #a6aaad;
+    padding-right: 15px;
+    cursor: pointer;
+}
+.map-bott{
+    text-align: center;
+    padding: 15px 0;
+    margin: 0 10px;
+}
+.map-bott button{
+    all: unset;
+    width: 100%;
+    background-color: #ff00a6;
+    padding: 15px 10px;;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-family: "IransanBold";
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+.search-btn {
+  background-color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px 8px 8px;
+  margin: 28px 0;
+  border-radius: 50px;
+}
+.btn-desc {
+  color: #a6aaad;
+  font-size: 14px;
+  font-family: "IransanRegular";
+}
+.loc {
+  margin-left: 11px;
+  color: #a6aaad;
+}
+.desc h1 span {
+  color: #ff0099;
+}
+.desc p {
+  color: #53565c;
+  font-size: 14px;
+  font-family: "SnapWebRegular";
+}
+.search-btn button {
+  all: unset;
+  background-color: #ff00a6;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.search-btn button i {
+  color: #fff;
+  font-size: 16px;
+}
+.img-1 {
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    margin-top: 0px;
+  }
+  .header .logo {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .header .actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+  .header .actions button {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header .logo {
+    font-size: 18px;
+  }
+  .header .actions button {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .header .actions .seller-link {
+    font-size: 12px;
+  }
+}
+
+.sec-2 {
+  margin-bottom: 50px;
+}
+.field-item img {
+  width: 100%;
+  height: 101px;
+}
+.field-item {
+  width: 105px;
+  height: auto;
+  padding: 10px 0;
+  margin-left: 10px;
+  text-align: center;
+  color: #3a3d42;
+  font-size: 14px;
+  font-family: "IransanRegular";
+  background-color: #f9fafb;
+  border: 1px #53565c;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  flex: 0 0 120px;
+  cursor: pointer;
+}
+.field-item:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease-in;
+}
+.field-item:hover img{
+    filter: drop-shadow(1px 1px 8px salmon);
+}
+.field {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+.scroll-container {
+  overflow: scroll;
+  overflow-y: hidden;
+}
+
+.daste {
+  margin-bottom: 32px;
+  padding-right: 20px;
+  color: #53565c;
+  font-family: "IransanBold";
+  font-size: 16px;
+}
+@media screen and (max-width: 850px) {
+    .daste{
+        padding-right: 20px;
+    }
+    .top{
+        justify-content: center;
+    }
+}
+.top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.top img {
+  width: 172px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.foods {
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 14px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.foods span {
+  background-color: #fff;
+  padding: 4px 20px;
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  color: #3a3d42;
+  font-family: "IransanRegular";
+  font-size: 16px;
+  border-top-left-radius: 20px;
+}
+.foods span .arrl {
+  color: #ff00a6;
+  margin-right: 15px;
+}
+.foods:hover .arrl {
+  transform: translateX(-2px);
+  transition: all 0.3s ease-in;
+}
+.sec-4 {
+  margin-bottom: 100px;
+}
+.content-midd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ebedf0;
+  margin-top: 150px;
+  padding: 64px;
+  border-bottom-right-radius: 150px;
+}
+.mid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right {
+  z-index: 10;
+}
+.right h1 {
+  padding-top: 30px;
+  color: #3a3d42;
+  font-family: "SnapWebBold";
+  font-size: 32px;
+}
+.pep {
+  margin: 40px 0;
+  color: #53565c;
+  font-family: "SnapWebRegular";
+  font-size: 14px;
+  text-align: justify;
+  width: 80%;
+}
+.sub {
+  font-size: 12px;
+  font-family: "IransanBold";
+  color: #53565c;
+  padding: 10px 0;
+}
+.submit {
+  background-color: #fff;
+  padding: 10px;
+  width: max-content;
+  border-radius: 5px;
+}
+input {
+  all: unset;
+}
+input::placeholder {
+  font-size: 12px;
+  font-family: "SnapWebRegular";
+}
+.submit button {
+  all: unset;
+  background-color: #ff00a6;
+  padding: 1px 6px;
+  font-size: 14px;
+  font-family: "IransanBold";
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.left {
+  position: relative;
+  text-align: left;
+}
+.fluid {
+  width: 500px;
+  position: absolute;
+  left: 0;
+  bottom: -320px;
+}
+@media screen and (max-width: 1000px) {
+  .left {
+    display: none;
+  }
+  .bott-pic {
+    flex-wrap: wrap;
+  }
+  .content-midd {
+    border-radius: 0;
+  }
+  .left-item {
+    display: none;
+  }
+}
+.bott-pic {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+.bott-pic img {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.sec-5 {
+  padding-bottom: 50px;
+  border-bottom: 1px solid #53565c46;
+}
+.about-buisns {
+  background-color: #f9fafb;
+  border-radius: 2rem;
+  margin-top: 160px;
+  padding: 48px;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  position: relative;
+}
+.right-item {
+  display: flex;
+  flex-direction: column;
+}
+.right-p-one {
+  color: #3a3d42;
+  font-family: "SnapWebBold";
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+.right-p-two {
+  color: #3a3d42;
+  font-family: "SnapWebRegular";
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+.right-item button {
+  all: unset;
+  width: max-content;
+  padding: 10px 16px;
+  background-color: #ff00a6;
+  color: #fff;
+  font-size: 18px;
+  font-family: "IransanBold";
+  font-weight: 700;
+  border-radius: 0.375rem;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+.right-item button i {
+  margin-left: 8px;
+  font-size: 22px;
+}
+.left-item {
+  position: absolute;
+  left: 50px;
+  top: -90px;
+  text-align: left;
+}
+
+.sec-6 {
+  padding: 32px;
+}
+.cities {
+  font-family: "IransanBold";
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 32px;
+  display: inline-block;
+  color: rgb(58, 61, 66);
+  text-align: initial;
+}
+.city {
+  font-family: "IransanaBold";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 0.75rem;
+  display: inline-block;
+  color: rgb(166, 170, 173);
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+}
+.footer-city {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.sec-7 {
+  background-color: #f9fafb;
+  padding: 0 15px;
+  padding-bottom: 100px;
+}
+.foot-1, .foot-2, .foot-3, .foot-4{
+    padding: 40px;
+}
+.footer {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.foot-img {
+  display: flex;
+  align-items: center;
+}
+.footer-text{
+    margin-right: 8px;
+}
+.footer-text h3 {
+  color: #ff00a6;
+  font-family: "SnapWebRegular";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.75rem;
+}
+.footer-text p {
+  font-family: "IransansRegular";
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  color: rgb(83, 86, 92);
+}
+
+.icons {
+  margin: 25px 100px 0 0;
+}
+.icons i {
+  margin-left: 10px;
+  background-color: #fff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 50%;
+  color: #53565c;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    cursor: pointer;
+}
+.iimg {
+  color: #a6aaad;
+}
+
+.foot-list {
+  display: flex;
+}
+.foot-2 ul,
+.foot-3 ul {
+  list-style-type: none;
+  margin-top: 20px;
+}
+.foot-2 li,
+.foot-3 li {
+  color: #3a3d42;
+  font-size: 12px;
+  font-family: "IransanRegular";
+  margin: 8px;
+  padding: 5px;
+  cursor: pointer;
+}
+.foot-4 img{
+    width: 70px;
+}
