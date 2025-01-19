@@ -313,13 +313,6 @@ body {
     cursor: pointer;
 }
 
-
-
-
-
-
-
-
 .search-btn {
   background-color: #fff;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
@@ -450,7 +443,7 @@ body {
   font-family: "IransanBold";
   font-size: 16px;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 850px){
     .daste{
         padding-right: 20px;
     }
@@ -461,6 +454,7 @@ body {
 .top {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .top img {
